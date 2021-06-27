@@ -7,7 +7,10 @@ const trackSchema = new Schema({
         type: String,
         required: true
     },
-    difficulty: String,
+    difficulty: {
+        type: String,
+        enum: ['Beginner', 'Intermediate', "Advance"]
+    },
     openToPublic: { type: Boolean, default: true},
 
 }, {
