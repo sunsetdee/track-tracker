@@ -7,9 +7,28 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>All Tracks</h1>
     <a href="tracks/addtrack">Add Track</a>
-    <a href="tracks/detail">Detail</a>
+    <h1>All Tracks</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Track</th>
+                <th>Difficulty</th>
+                <th>Open To Public</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% tracks.forEach(function(track) { %>
+            <tr>
+                <td><%= track.name %></td>
+                <td><%= track.difficulty %></td>
+                <td><%= track.openToPublic %></td>
+                <a href="tracks/detail">Detail</a>
+            </tr>
+            <% }); %>
+        </tbody>
+    </table>
+
     
 </body>
 </html>

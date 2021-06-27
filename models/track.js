@@ -2,6 +2,16 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+const reviewSchema = new Schema({
+    content: {type: String, required: true},
+    rating: {type: Number, min: 1, max: 5, default: 5},
+    user: {type: Schema.Types.ObjectId, ref: 'User'},
+    userName: String,
+    userAvatar: String
+}, {
+    timestamps: true
+});
+
 const trackSchema = new Schema({
     name: {
         type: String,
@@ -12,7 +22,7 @@ const trackSchema = new Schema({
         enum: ['Beginner', 'Intermediate', "Advance"]
     },
     openToPublic: { type: Boolean, default: true},
-
+    reviews: [reviewSchema]
 }, {
     timestamps: true
 });

@@ -8,7 +8,7 @@ module.exports = {
 
 function index(req, res) {
     Track.find({}, function(err, tracks) {
-        res.render('tracks/index');
+        res.render('tracks/index', { tracks });
     });
 }
 
