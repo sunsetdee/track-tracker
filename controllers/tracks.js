@@ -4,6 +4,7 @@ module.exports = {
     index,
     new: newTrack,
     show,
+    create,
 };
 
 function index(req, res) {
@@ -19,5 +20,13 @@ function newTrack(req, res) {
 function show(req, res) {
     Track.findById(req.params.id, function(err, track) {
         res.render('tracks/detail');
+    });
+}
+
+function create(req, res) {
+    const track = new Track(req.body)
+    track.save(function(err) {
+        if (err) console.log(err)
+        res.redirect('/tracks')
     });
 }

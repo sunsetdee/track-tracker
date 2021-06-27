@@ -8,5 +8,23 @@
 </head>
 <body>
     <h1>Add Track</h1>
+    <nav>
+        <form action="/tracks" method="POST">
+        <label>Track:</label>
+        <input type="text" name="name">
+        <label>Difficulty:</label>
+        <select name="difficulty">
+            <option value="Beginner">Beginner</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advance">Advance</option>
+        </select>
+        <label>Open To Public:</label>
+        <select name="openToPublic">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+        <input type="submit" value="Add Track">
+        </form>
+    </nav>
 </body>
 </html>

@@ -21,7 +21,10 @@ const trackSchema = new Schema({
         type: String,
         enum: ['Beginner', 'Intermediate', "Advance"]
     },
-    openToPublic: { type: Boolean, default: true},
+    openToPublic: {
+        type: String,
+        enum: ['Yes', 'No']
+    },
     reviews: [reviewSchema]
 }, {
     timestamps: true

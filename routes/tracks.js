@@ -9,4 +9,8 @@ router.get('/addtrack', tracksCtrl.new);
 
 router.get('/:id', tracksCtrl.show);
 
+router.post('/', tracksCtrl.create );
+
+
+
 module.exports = router;
