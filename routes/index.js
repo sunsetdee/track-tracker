@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
   res.render('home');
 });
 
-router.get('.auth/google', passport.authenticate(
+router.get('/auth/google', passport.authenticate(
   'google',
   { scope: ['profile', 'email'] }
 ));
