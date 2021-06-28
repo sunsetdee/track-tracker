@@ -10,7 +10,11 @@
         <div>
           Track Tracker
         </div>
-        <a class ="login1" href="auth/google">Log In</a>
+        <% if (user) { %>
+        <a href="logout">LOG OUT</a>
+        <% } else { %>
+        <a class ="login1" href="auth/google">LOG IN</a>
+        <% } %>
       </div>
     </nav>
     <a href="/tracks">All Tracks</a>

@@ -7,8 +7,14 @@
     <title>Document</title>
 </head>
 <body>
+    <nav>
     <a href="/">Home</a>
+    <% if (user) { %>
     <a href="tracks/addtrack">Add Track</a>
+    <% } else { %> 
+        <a class ="login1" href="auth/google">LOG IN</a>
+    <% } %>
+    </nav>
     <h1>All Tracks</h1>
     <table>
         <thead>

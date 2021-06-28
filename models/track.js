@@ -26,6 +26,7 @@ const trackSchema = new Schema({
         type: String,
         enum: ['Yes', 'No']
     },
+    user: {type: Schema.Types.ObjectId, ref: 'User'},
     lapTime: {type: Number},
     reviews: [reviewSchema]
 }, {
