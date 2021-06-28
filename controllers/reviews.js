@@ -19,8 +19,8 @@ function create(req, res) {
 async function deleteReview(req, res) {
     const track = await Track.findOne({'reviews._id': req.params.id});
     const review = track.reviews.id(req.params.id);
-    if (!review.user.equals(req.user._id)) return res.redirect('tracks/${track._id}');
+    if (!review.user.equals(req.user._id)) return res.redirect(`tracks/${track._id}`);
     review.remove();
     await track.save();
-    res.redirect('/tracks/${track._id}');
+    res.redirect(`/tracks/${track._id}`);
 }
