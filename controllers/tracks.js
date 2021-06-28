@@ -8,25 +8,27 @@ module.exports = {
 };
 
 function index(req, res) {
-    Track.find({}, function(err, tracks) {
+    Track.find({})
+    .populate('user')
+    .exec(function(err, tracks) {
         res.render('tracks/index', { tracks });
     });
 }
 
 function newTrack(req, res) {
-    res.render('tracks/addtrack');
+    res.render('tracks/new');
 }
 
 function show(req, res) {
     Track.findById(req.params.id, function(err, track) {
-        res.render('tracks/detail');
+        res.render('tracks/show', { track });
     });
 }
 
 function create(req, res) {
-    const track = new Track(req.body)
+    req.body.user = req.user._id;
+    const track = new Track(req.body);
     track.save(function(err) {
-        if (err) console.log(err)
-        res.redirect('/tracks')
+        res.redirect('/tracks');
     });
 }

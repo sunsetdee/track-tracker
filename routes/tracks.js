@@ -1,15 +1,16 @@
 var express = require('express');
 var router = express.Router();
 const tracksCtrl = require('../controllers/tracks');
+const isLoggedIn = require('../config/auth');
 
 /* GET users listing. */
 router.get('/', tracksCtrl.index);
 
-router.get('/addtrack', tracksCtrl.new);
+router.get('/new', isLoggedIn, tracksCtrl.new);
 
 router.get('/:id', tracksCtrl.show);
 
-router.post('/', tracksCtrl.create );
+router.post('/', isLoggedIn, tracksCtrl.create );
 
 
 

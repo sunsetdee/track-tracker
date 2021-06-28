@@ -1,0 +1,82 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0;
+  height: 100vh;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.login1 {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 1.3rem;
+  /* color: white; */
+}
+
+.home {
+  background-color: #9DC8DD;
+ }
+
+ .homeimage {
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.spanhome {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 20px;
+}
+
+#homepage {
+  background-image: url("https://i.imgur.com/cBvHmCA.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#tracklistpage {
+  background-image: url("https://i.imgur.com/cBvHmCA.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  height: 100%;
+  padding: 2rem;
+}
+
+a.track {
+  height: 10rem;
+  width: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  text-decoration: none;
+  margin: 1rem;
+  text-align: center;
+  opacity: 0.87;
+}
+
+a.track:hover {
+  background-color: white;
+  color: black;
+
+}
+

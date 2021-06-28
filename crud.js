@@ -1,5 +1,7 @@
-require('./config/database')
-const Movie = require('./models/track');
+require('dotenv').config();
+require('./config/database');
+
+const Track = require('./models/track');
 // const Performer = require('./models/driver');
 
 let t;

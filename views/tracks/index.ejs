@@ -1,42 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <nav>
-    <a href="/">Home</a>
-    <% if (user) { %>
-    <a href="tracks/addtrack">Add Track</a>
-    <% } else { %> 
-        <a class ="login1" href="auth/google">LOG IN</a>
-    <% } %>
-    </nav>
-    <h1>All Tracks</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Track</th>
-                <th>Difficulty</th>
-                <th>Open To Public</th>
-                <th>Details</th>
-            </tr>
-        </thead>
-        <tbody>
-            <% tracks.forEach(function(track) { %>
-            <tr>
-                <td><%= track.name %></td>
-                <td><%= track.difficulty %></td>
-                <td><%= track.openToPublic %></td>
-                <td><a href="tracks/<%= track._id %>">Detail</a></td>
-            </tr>
-            <% }); %>
-        </tbody>
-    </table>
+<%- include('../partials/header') %>
 
-    
-</body>
-</html>
+    <main id="tracklistpage">
+
+        <% tracks.forEach(function(track) { %>
+
+            <a class="track" href="/tracks/<%= track._id %>">
+                <%= track.name %>
+            </a>
+
+        <% }); %>
+
+    </main>
+
+<%- include('../partials/footer') %>

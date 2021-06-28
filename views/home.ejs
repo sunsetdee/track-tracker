@@ -1,23 +1,9 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>track tracker</title>
-    <link rel='stylesheet' href='/stylesheets/home.css' />
-  </head>
-  <body>
-    <nav>
-      <div class="home">
-        <div>
-          Track Tracker
-        </div>
-        <% if (user) { %>
-        <a href="logout">LOG OUT</a>
-        <% } else { %>
-        <a class ="login1" href="auth/google">LOG IN</a>
-        <% } %>
-      </div>
-    </nav>
-    <a href="/tracks">All Tracks</a>
-    <img class="homeimage" src="https://i.imgur.com/cBvHmCA.jpg">
-  </body>
-</html>
+<%- include('./partials/header') %>
+
+<main id="homepage">
+
+  <h1>Title</h1>
+
+</main>
+
+<%- include('./partials/footer') %>

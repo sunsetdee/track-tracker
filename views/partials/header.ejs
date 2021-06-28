@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>track tracker</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <nav>
+        <div>
+          Track Tracker
+        </div>
+        <% if (user) { %>
+            <a class="spanhome" href="logout">LOG OUT</a>
+            <a href="/tracks/new">ADD TRACK</a>
+        <% } else { %>
+            <a class ="login1" href="auth/google">LOG IN</a>
+        <% } %>
+        <a href="/tracks">ALL TRACKS</a>
+    </nav>
+ 
