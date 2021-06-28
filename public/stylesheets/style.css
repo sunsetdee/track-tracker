@@ -39,9 +39,10 @@ a {
 }
 
 #homepage {
-  background-image: url("https://i.imgur.com/cBvHmCA.jpg");
+  background-image: url("https://i.imgur.com/XEEq5QR.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 }
 #tracklistpage {
   background-image: url("https://i.imgur.com/cBvHmCA.jpg");
@@ -72,11 +73,29 @@ a.track {
   margin: 1rem;
   text-align: center;
   opacity: 0.87;
+  background-image: url("https://i.imgur.com/ay0Z0wc.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 a.track:hover {
   background-color: white;
   color: black;
+}
 
+.homeATag {
+  height: 10rem;
+  width: 20rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  text-decoration: none;
+  margin: 1rem;
+  text-align: center;
+  opacity: 0.87;
 }
 

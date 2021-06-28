@@ -7,10 +7,8 @@ module.exports = {
 };
 
 function create(req, res) {
-    Track.findById(req.params.id, function(err, movie) {
+    Track.findById(req.params.id, function(err, track) {
         req.body.user = req.user._id;
-        req.body.userName = req.user.name;
-        req.body.userAvatar = req.user.avatar;
         track.reviews.push(req.body);
         track.save(function(err) {
             res.redirect(`/tracks/${track._id}`);

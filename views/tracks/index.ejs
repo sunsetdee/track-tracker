@@ -1,15 +1,17 @@
 <%- include('../partials/header') %>
-
+    <nav>
+        <a href="/">HOME</a>
+        <% if (user) { %>
+        <a href="/tracks/new">ADD TRACK</a>
+        <% } %>
+    </nav>
     <main id="tracklistpage">
 
         <% tracks.forEach(function(track) { %>
-
             <a class="track" href="/tracks/<%= track._id %>">
                 <%= track.name %>
             </a>
-
-        <% }); %>
-
-    </main>
+         <% }); %>
+     </main>
 
 <%- include('../partials/footer') %>
