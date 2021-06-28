@@ -8,5 +8,24 @@
 </head>
 <body>
     <h1>Track Detail</h1>
+    <h2>Reviews</h2>
+<!-- <% if (user) { %> -->
+  <form id="add-review-form" method="POST" action="/tracks/<%= track._id %>/reviews">
+    <label>Review:</label>
+    <textarea name="content"></textarea>
+    <label>Rating:</label>
+    <select name="rating">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <label>
+          <input type="date" required name="dateAttend" id="">
+      </label>
+    </select>
+    <input type="submit" value="Add Review">
+  </form>
+<!-- <% } %> -->
 </body>
 </html>

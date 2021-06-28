@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+    <a href="/">Home</a>
     <a href="tracks/addtrack">Add Track</a>
     <h1>All Tracks</h1>
     <table>
@@ -15,6 +16,7 @@
                 <th>Track</th>
                 <th>Difficulty</th>
                 <th>Open To Public</th>
+                <th>Details</th>
             </tr>
         </thead>
         <tbody>
@@ -23,7 +25,7 @@
                 <td><%= track.name %></td>
                 <td><%= track.difficulty %></td>
                 <td><%= track.openToPublic %></td>
-                <a href="tracks/detail">Detail</a>
+                <td><a href="tracks/<%= track._id %>">Detail</a></td>
             </tr>
             <% }); %>
         </tbody>

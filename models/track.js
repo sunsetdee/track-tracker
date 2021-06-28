@@ -5,6 +5,7 @@ const Schema = mongoose.Schema;
 const reviewSchema = new Schema({
     content: {type: String, required: true},
     rating: {type: Number, min: 1, max: 5, default: 5},
+    dateAttend: {type: Date},
     user: {type: Schema.Types.ObjectId, ref: 'User'},
     userName: String,
     userAvatar: String
@@ -25,6 +26,7 @@ const trackSchema = new Schema({
         type: String,
         enum: ['Yes', 'No']
     },
+    lapTime: {type: Number},
     reviews: [reviewSchema]
 }, {
     timestamps: true
