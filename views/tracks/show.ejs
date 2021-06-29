@@ -7,27 +7,23 @@
     <h3>Add Review</h3>
 <% if (user) { %> 
   <form id="add-review-form" method="POST" action="/tracks/<%= track._id %>/reviews">
-    <label>Review:</label>
-    <textarea name="content"></textarea>
-    <label>Rating:</label>
-    <select name="rating">
+    <label class="showreview">Review:</label>
+    <textarea class="showreview1" name="content"></textarea>
+    <label class="showreview">Rating:</label>
+    <select class="showreview2" name="rating">
       <option value="1">1</option>
       <option value="2">2</option>
       <option value="3">3</option>
       <option value="4">4</option>
       <option value="5">5</option>
     </select>
-    <label>Difficulty</label>
-    <select name="difficulty">
+    <label class="showreview">Difficulty</label>
+    <select class="showreview2" name="difficulty">
       <option value="Beginner">Beginner</option>
       <option value="Intermediate">Intermediate</option>
       <option value="Advance">Advance</option>
     </select>
-    <input type="submit" value="Add Review">
-
-
-
-    
+    <input id="addreview" class="showreview2" type="submit" value="Add Review">
   </form> 
 <% } %>
 
@@ -35,11 +31,11 @@
 <table>
   <thead>
     <tr>
-      <th>User</th>
-      <th>Date</th>
-      <th>Review</th>
-      <th>Rating</th>
-      <th>Difficulty</th>
+      <th class="review-user">User</th>
+      <th class="review-user">Date</th>
+      <th class="review-user">Review</th>
+      <th id="rating" class="review-user">Rating</th>
+      <th class="review-user">Difficulty</th>
     </tr>
   </thead>
   <tbody>
@@ -48,24 +44,25 @@
       <% total += review.rating %>
       <tr>
         <td class="review-user"><%= review.userName %></td>
-        <td><%= review.createdAt.toLocaleDateString() %></td>
-        <td><%= review.content %></td>
-        <td><%= review.rating %></td>
-        <td><%= track.difficulty %></td>
+        <td id="date" class="review-user"><%= review.createdAt.toLocaleDateString() %></td>
+        <td id="review" class="review-user"><%= review.content %></td>
+        <td class="review-user"><%= review.rating %></td>
+        <td class="review-user"><%= track.difficulty %></td>
+        <td>
           <% if (user && user._id.equals(review.user)) { %>
-            <form action="/reviews/<%= review._id %>?_method=DELETE" method="POST">
-              <button type="submit">X</button>
+            <form class="edit-review" action="/reviews/<%= review._id %>?_method=DELETE" method="POST">
+              <button class="showreview2" id="deletereview" type="submit">X</button>
             </form>
-            <form action="/reviews/<%= review._id %>?_method=PUT" method="POST">
-              <input name="content">
-              <select name="rating" id="">
+            <form class="edit-review" action="/reviews/<%= review._id %>?_method=PUT" method="POST">
+              <input class="showreview2" name="content">
+              <select class="showreview2" name="rating" id="">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
                 <option value="5">5</option>
               </select>
-              <button type="submit">UPDATE REVIEW</button>
+              <button id="updatereview" class="showreview2" type="submit">UPDATE REVIEW</button>
             </form>
             <% } %>
           </td>

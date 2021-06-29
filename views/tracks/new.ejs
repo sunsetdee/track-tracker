@@ -4,26 +4,26 @@
     <a href="/tracks">ALL TRACKS</a>
 </nav>
 <main id="newtrack">
-    <h1>Add Track</h1>
+    <h1 id="add">Add Track</h1>
     <nav>
         <form action="/tracks" method="POST">
-        <label>Track:</label>
-        <input type="text" name="name">
-        <label>Details
+        <label class="addtrack">Track:</label>
+        <input class="showreview2" type="text" name="name">
+        <label class="addtrack">Details
             <textarea name="detail" id="" cols="30" rows="10"></textarea>
         </label>
-        <label>Difficulty:</label>
-        <select name="difficulty">
+        <label class="addtrack">Difficulty:</label>
+        <select class="showreview2" name="difficulty">
             <option value="Beginner">Beginner</option>
             <option value="Intermediate">Intermediate</option>
             <option value="Advance">Advance</option>
         </select>
-        <label>Open To Public:</label>
-        <select name="openToPublic">
+        <label class="addtrack">Open To Public:</label>
+        <select class="showreview2" name="openToPublic">
             <option value="Yes">Yes</option>
             <option value="No">No</option>
         </select>
-        <input type="submit" value="Add Track">
+        <input id="addtrack" class="showreview2" type="submit" value="Add Track">
         </form>
     </nav>
 </main>

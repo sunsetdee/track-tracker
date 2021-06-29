@@ -4,6 +4,11 @@
         <% if (user) { %>
         <a href="/tracks/new">ADD TRACK</a>
         <% } %>
+        <% if (user) { %>
+            <a class="spanhome" href="/logout">LOG OUT</a>
+            <% } else { %>
+              <a class ="login1" href="/auth/google">LOG IN</a>
+              <% } %>
     </nav>
     <main id="tracklistpage">
         

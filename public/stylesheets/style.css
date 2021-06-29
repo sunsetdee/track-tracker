@@ -148,9 +148,72 @@ a.track:hover {
   color: black;
 }
 
+.showreview {
+  font-size: 22px;
+}
 
+.showreview1 {
+  line-height: 15px;
+}
 
+.showreview2 {
+  font-size: 22px;
+}
 
+#addreview {
+  border-radius: 33px;
+  background-color: yellowgreen;
+}
+
+#add-review-form {
+  padding-bottom: 30px;
+}
+
+.edit-review {
+  display: inline;
+}
+
+#deletereview {
+  border-radius: 33px;
+  background-color: red;
+  cursor: pointer;
+}
+
+.review-user {
+  font-size: 22px;
+}
+
+#rating {
+  padding-right: 30px;
+}
+
+#review {
+  padding-right: 30px;
+}
+
+#date {
+  padding-right: 30px;
+}
+
+#updatereview {
+  border-radius: 33px;
+  background-color: red;
+  cursor: pointer;
+}
+
+#addtrack {
+  border-radius: 33px;
+  background-color: yellowgreen;
+  cursor: pointer;
+}
+
+.addtrack {
+  font-size: 22px;
+}
+
+#add {
+  color: red;
+}
 
 
 
