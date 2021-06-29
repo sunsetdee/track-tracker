@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-  <nav><a href="/tracks">ALL TRACKS</a></nav>
+<%- include('../partials/header') %>
+
+<nav><a href="/tracks">ALL TRACKS</a></nav>
+<main id="mainshow">
     <h1>Track Detail</h1>
     <div><%= track.detail %></div>
     <h2>Reviews</h2>
@@ -54,10 +48,21 @@
             <form action="/reviews/<%= review._id %>?_method=DELETE" method="POST">
               <button type="submit">X</button>
             </form>
-          <% } %>
-        </td>
-      </tr>
-    <% }); %>
+            <form action="/reviews/<%= review._id %>?_method=PUT" method="POST">
+              <input name="content">
+              <select name="rating" id="">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+              <button type="submit">UPDATE REVIEW</button>
+            </form>
+            <% } %>
+          </td>
+        </tr>
+        <% }); %>
     <tr>
       <td colspan="3"></td>
       <td><strong><%= (total / track.reviews.length).toFixed(1) %></strong></td>
@@ -67,7 +72,7 @@
 <% } else { %>
 <h5>No Reviews Yet</h5>
 <% } %>
-
+</main>
 
 </body>
 </html>

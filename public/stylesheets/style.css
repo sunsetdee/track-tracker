@@ -54,6 +54,13 @@ a {
   align-items: center;
 }
 
+#newtrack {
+  background-image: url("https://i.imgur.com/D4gEkFt.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 main {
   height: 100%;
   padding: 2rem;
@@ -98,4 +105,5 @@ a.track:hover {
   text-align: center;
   opacity: 0.87;
 }
+
 
