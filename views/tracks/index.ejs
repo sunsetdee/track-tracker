@@ -1,12 +1,12 @@
 <%- include('../partials/header') %>
-    <nav>
-        <a href="/">HOME</a>
+    <nav class="indexnav">
+        <a href="/">HOME</a> &nbsp;||&nbsp;
         <% if (user) { %>
         <a href="/tracks/new">ADD TRACK</a>
         <% } %>
     </nav>
     <main id="tracklistpage">
-
+        
         <% tracks.forEach(function(track) { %>
             <a class="track" href="/tracks/<%= track._id %>">
                 <%= track.name %>

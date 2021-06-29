@@ -25,7 +25,6 @@ a {
 
  .homeimage {
   height: 100%;
-
   /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
@@ -105,5 +104,54 @@ a.track:hover {
   text-align: center;
   opacity: 0.87;
 }
+
+#headnav {
+  background-color: #3965ED;
+  height: 75px;
+}
+
+#instagram {
+  height: 97px;
+  display: block;
+  margin-left: auto;
+  margin-right: 1100px;
+}
+
+.indexnav {
+  background-color: #3965ED;;
+  font-size: 20px;
+  padding-left: 20px;
+}
+
+.spanhome {
+  font-size: 20px;
+  padding-bottom: 30px;
+}
+.newnav {
+  background-color: #3965ED;;
+  font-size: 20px;
+  padding-left: 20px;
+}
+
+.shownav {
+  background-color: #3965ED;;
+  font-size: 20px;
+  padding-left: 20px;
+}
+
+#mainshow {
+  background-image: url("https://i.imgur.com/P89LLBg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  font-size: 20px;
+  color: black;
+}
+
+
+
+
+
+
 
 
