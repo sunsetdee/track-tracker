@@ -1,4 +1,3 @@
-const track = require('../models/track');
 const Track = require('../models/track');
 
 module.exports = {
