@@ -27,7 +27,7 @@ async function deleteReview(req, res) {
 }
 
 function edit(req, res) {
-    review.findOne({_id: req.params.id}, function(err, review) {
+    Review.findOne({_id: req.params.id}, function(err, review) {
       if (err || !reviews) return res.redirect('/tracks');
       res.render('track/edit', {review});
     });
