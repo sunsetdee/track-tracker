@@ -6,6 +6,22 @@
   </head>
   <body>
     <nav id="headnav">
+      <div>
+        <a href="/">HOME</a> 
+        &nbsp; | &nbsp;
+        <a href="/tracks">ALL TRACKS</a>
+        &nbsp; | &nbsp;
+        <% if (user) { %>
+          <a href="/tracks/new">ADD TRACK </a>
+        <% } %>
+      </div>
+      <div id="img-text">
         <img id="instagram" src="https://i.imgur.com/uFhDWKA.jpg">
-     </nav>
- 
+        &nbsp;@sunset_gtr
+      </div>
+      <% if (user) { %>
+        <a class="spanhome" href="/logout">LOG OUT</a>
+      <% } else { %>
+        <a class ="login1" href="/auth/google">LOG IN</a>
+      <% } %>
+    </nav>
