@@ -6,76 +6,87 @@
     <h3>Add Review</h3>
 <% if (user) { %> 
   <form id="add-review-form" method="POST" action="/tracks/<%= track._id %>/reviews">
-    <label class="showreview">Review:</label>
-    <textarea class="showreview1" name="content"></textarea>
-    <label class="showreview">Rating:</label>
-    <select class="showreview2" name="rating">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-    </select>
-    <label class="showreview">Difficulty</label>
-    <select class="showreview2" name="difficulty">
-      <option value="Beginner">Beginner</option>
-      <option value="Intermediate">Intermediate</option>
-      <option value="Advance">Advance</option>
-    </select>
-    <input id="addreview" class="showreview2" type="submit" value="Add Review">
+    <div>
+      <label class="showreview">Review:</label>
+      <textarea id="addReview" class="showreview1" name="content"></textarea>
+    </div>
+    <div>
+      <label class="showreview">Rating:</label>
+      <select id="addRating" class="showreview2" name="rating">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </div>
+    <div>
+      <label class="showreview">Difficulty</label>
+      <select id="addDifficulty" class="showreview2" name="difficulty">
+        <option value="Beginner">Beginner</option>
+        <option value="Intermediate">Intermediate</option>
+        <option value="Advance">Advance</option>
+      </select>
+    </div>
+    <div>
+      <input id="addreview" class="showreview2" type="submit" value="Add Review">
+    </div>
   </form> 
+
+
+
 <% } %>
 
 <% if (track.reviews.length) { %>
-<table>
-  <thead>
-    <tr>
-      <th class="review-user">User</th>
-      <th class="review-user">Date</th>
-      <th class="review-user">Review</th>
-      <th id="rating" class="review-user">Rating</th>
-      <th class="review-user">Difficulty</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% let total = 0 %>
-    <% track.reviews.forEach(function(review) { %>
-      <% total += review.rating %>
-      <tr>
-        <td class="review-user"><%= review.userName %></td>
-        <td id="date" class="review-user"><%= review.createdAt.toLocaleDateString() %></td>
-        <td id="review" class="review-user"><%= review.content %></td>
-        <td class="review-user"><%= review.rating %></td>
-        <td class="review-user"><%= track.difficulty %></td>
-        <td>
-          <% if (user && user._id.equals(review.user)) { %>
-            <form class="edit-review" action="/reviews/<%= review._id %>?_method=DELETE" method="POST">
-              <button class="showreview2" id="deletereview" type="submit">X</button>
-            </form>
-            <form class="edit-review" action="/reviews/<%= review._id %>?_method=PUT" method="POST">
-              <input class="showreview2" name="content">
-              <select class="showreview2" name="rating" id="">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-              </select>
-              <button id="updatereview" class="showreview2" type="submit">UPDATE REVIEW</button>
-            </form>
-            <% } %>
-          </td>
+    <table>
+      <thead>
+        <tr>
+          <th class="review-user">User</th>
+          <th class="review-user">Date</th>
+          <th class="review-user">Review</th>
+          <th id="rating" class="review-user">Rating</th>
+          <th class="review-user">Difficulty</th>
         </tr>
-        <% }); %>
-    <tr>
-      <td colspan="3"></td>
-      <td><strong><%= (total / track.reviews.length).toFixed(1) %></strong></td>
-    </tr>
-  </tbody>
-</table>
-<% } else { %>
-<h5>No Reviews Yet</h5>
-<% } %>
-</main>
-
+      </thead>
+      <tbody>
+        <% let total = 0 %>
+        <% track.reviews.forEach(function(review) { %>
+          <% total += review.rating %>
+          <tr>
+            <td class="review-user"><%= review.userName %></td>
+            <td id="date" class="review-user"><%= review.createdAt.toLocaleDateString() %></td>
+            <td id="review" class="review-user"><%= review.content %></td>
+            <td class="review-user"><%= review.rating %></td>
+            <td class="review-user"><%= track.difficulty %></td>
+            <td>
+              <% if (user && user._id.equals(review.user)) { %>
+                <form class="edit-review" action="/reviews/<%= review._id %>?_method=DELETE" method="POST">
+                  <button class="showreview2" id="deletereview" type="submit">X</button>
+                </form>
+                <form class="edit-review" action="/reviews/<%= review._id %>?_method=PUT" method="POST">
+                  <input class="showreview2" name="content">
+                  <select class="showreview2" name="rating" id="">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                  <button id="updatereview" class="showreview2" type="submit">UPDATE REVIEW</button>
+                </form>
+                <% } %>
+              </td>
+            </tr>
+            <% }); %>
+            <tr>
+              <td colspan="3"></td>
+              <td><strong><%= (total / track.reviews.length).toFixed(1) %></strong></td>
+            </tr>
+          </tbody>
+        </table>
+        <% } else { %>
+          <h5>No Reviews Yet</h5>
+          <% } %>
+        </main>
+        
 <%- include('../partials/footer') %>

@@ -171,6 +171,8 @@ a.track:hover {
 #addreview {
   border-radius: 33px;
   background-color: yellowgreen;
+  margin-left: 18vmin;
+  margin-top: 3vmin;
 }
 
 #add-review-form {
@@ -213,6 +215,8 @@ a.track:hover {
   border-radius: 33px;
   background-color: yellowgreen;
   cursor: pointer;
+  margin-top: 5vmin;
+  margin-left: 13vmin;
 }
 
 .addtrack {
@@ -227,6 +231,34 @@ a.track:hover {
   text-decoration: none;
   color: pink;
 }
+
+#add-track-input {
+  margin-left: 5vmin;
+  margin-bottom: 3vmin;
+}
+
+#add-track-detail {
+  margin-left: 3.3vmin;
+}
+
+#add-difficulty {
+  margin-left: 1.2vmin;
+}
+
+#addReview {
+  margin-left: 5vmin;
+}
+
+#addRating {
+  margin-left: 5.6vmin;
+}
+
+#addDifficulty {
+  margin-left: 2.7vmin;
+}
+
+
+
 
 
 

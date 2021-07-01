@@ -4,23 +4,33 @@
     <h1 id="add">Add Track</h1>
     <nav>
         <form action="/tracks" method="POST">
-        <label class="addtrack">Track:</label>
-        <input class="showreview2" type="text" name="name">
-        <label class="addtrack">Details
-            <textarea name="detail" id="" cols="30" rows="10"></textarea>
-        </label>
-        <label class="addtrack">Difficulty:</label>
-        <select class="showreview2" name="difficulty">
+        <div>
+            <label class="addtrack">Track:</label>
+            <input id="add-track-input" class="showreview2" type="text" name="name">
+        </div>
+        <div>
+            <label class="addtrack">Details:
+            <textarea id="add-track-detail" name="detail" id="" cols="30" rows="10"></textarea>
+            </label>
+        </div>
+        <div>
+            <label class="addtrack">Difficulty:</label>
+            <select id="add-difficulty" class="showreview2" name="difficulty">
             <option value="Beginner">Beginner</option>
             <option value="Intermediate">Intermediate</option>
             <option value="Advance">Advance</option>
-        </select>
-        <label class="addtrack">Open To Public:</label>
-        <select class="showreview2" name="openToPublic">
+            </select>
+        </div>
+        <div>
+            <label class="addtrack">Open To Public:</label>
+            <select class="showreview2" name="openToPublic">
             <option value="Yes">Yes</option>
             <option value="No">No</option>
-        </select>
-        <input id="addtrack" class="showreview2" type="submit" value="Add Track">
+            </select>
+        </div>
+        <div>
+            <input id="addtrack" class="showreview2" type="submit" value="Add Track">
+        </div>
         </form>
     </nav>
 </main>
