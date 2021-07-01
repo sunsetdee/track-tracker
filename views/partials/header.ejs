@@ -7,12 +7,12 @@
   <body>
     <nav id="headnav">
       <div>
-        <a href="/">HOME</a> 
+        <a class="headerATag" href="/">HOME</a> 
         &nbsp; | &nbsp;
-        <a href="/tracks">ALL TRACKS</a>
+        <a class="headerATag" href="/tracks">ALL TRACKS</a>
         &nbsp; | &nbsp;
         <% if (user) { %>
-          <a href="/tracks/new">ADD TRACK </a>
+          <a class="headerATag" href="/tracks/new">ADD TRACK </a>
         <% } %>
       </div>
       <div id="img-text">
@@ -24,9 +24,9 @@
         <% if (user.admin === false) {  %>
         <a href="/admins/<%= user._id %>/login">Admin Login</a> 
         <% } %>
-        <a class="spanhome" href="/logout">LOG OUT</a>
+        <a class="headerATag" class="spanhome" href="/logout">LOG OUT</a>
       <% } else { %>
-        <a class ="login1" href="/auth/google">LOG IN</a>
+        <a class="headerATag" class ="login1" href="/auth/google">LOG IN</a>
       <% } %>
 
     </nav>

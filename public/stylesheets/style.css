@@ -73,7 +73,7 @@ a.track {
   align-items: center;
   background-color: black;
   color: white;
-  border-radius: 0.5rem;
+  border-radius: 5rem;
   font-size: 1.5rem;
   text-decoration: none;
   margin: 1rem;
@@ -86,7 +86,7 @@ a.track {
 
 a.track:hover {
   background-color: white;
-  color: black;
+  color: pink;
 }
 
 .homeATag {
@@ -221,6 +221,11 @@ a.track:hover {
 
 #add {
   color: red;
+}
+
+.headerATag {
+  text-decoration: none;
+  color: pink;
 }
 
 
