@@ -20,8 +20,13 @@
         &nbsp;@sunset_gtr
       </div>
       <% if (user) { %>
+        
+        <% if (user.admin === false) {  %>
+        <a href="/admins/<%= user._id %>/login">Admin Login</a> 
+        <% } %>
         <a class="spanhome" href="/logout">LOG OUT</a>
       <% } else { %>
         <a class ="login1" href="/auth/google">LOG IN</a>
       <% } %>
+
     </nav>
